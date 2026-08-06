@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+:root { --ink: #172238; --muted: #697386; --line: #e8ebf1; --paper: #fff; }
+* { box-sizing: border-box; }
+html { background: #fff; }
+body { margin: 0; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.page-shell { min-height: 100svh; display: grid; place-items: center; padding: 32px 20px 24px; background: #fff; }
+.link-hub { width: min(100%, 440px); }
+.brands-box { width: min(100%, 600px); padding: 44px 40px 38px; background: #fff; border: 1px solid #e2e5ea; border-radius: 26px; box-shadow: 0 14px 40px rgba(31,43,70,.09); }
+.intro { text-align: center; margin-bottom: 24px; }
+.eyebrow { display: inline-block; color: #ee1748; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 12px; }
+.intro h1 { margin: 0; font-size: clamp(27px, 8vw, 34px); line-height: 1.1; letter-spacing: -.04em; font-weight: 800; }
+.intro p { margin: 10px 0 0; color: var(--muted); font-size: 15px; }
+.brand-list { display: grid; gap: 16px; }
+.brand-choice { color: inherit; text-decoration: none; height: 134px; padding: 20px 22px; display: grid; grid-template-columns: 100px minmax(0, 1fr) 36px; gap: 18px; align-items: center; background: #fff; border: 1px solid #e2e5ea; border-radius: 18px; box-shadow: 0 8px 24px rgba(31,43,70,.08); transition: box-shadow .25s ease, transform .25s ease; }
+.brand-choice:hover { transform: translateY(-3px); box-shadow: 0 20px 45px rgba(31,43,70,.13); }
+.brand-choice:focus-visible { outline: 3px solid rgba(238,23,72,.25); outline-offset: 3px; }
+.choice-arrow { width: 32px; height: 32px; border-radius: 50%; background: #172238; color: white; display: grid; place-items: center; }
+.choice-arrow svg { width: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.brand-card { overflow: hidden; background: rgba(255,255,255,.94); border: 1px solid rgba(223,227,234,.9); border-radius: 22px; box-shadow: 0 14px 35px rgba(31,43,70,.08), 0 2px 6px rgba(31,43,70,.04); transition: box-shadow .25s ease, transform .25s ease; }
+.brand-card[open] { box-shadow: 0 20px 45px rgba(31,43,70,.12), 0 3px 8px rgba(31,43,70,.05); }
+.brand-card summary { cursor: pointer; list-style: none; min-height: 116px; padding: 18px 18px 18px 16px; display: grid; grid-template-columns: 82px 1fr 34px; gap: 14px; align-items: center; }
+.brand-card summary::-webkit-details-marker { display: none; }
+.logo-wrap { width: 100px; height: 90px; border-radius: 14px; display: grid; place-items: center; overflow: hidden; background: #f8f5ef; border: 1px solid #f0ece4; }
+.logo-wrap img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.cobolt .logo-wrap { background: transparent; border: 0; border-radius: 0; }
+.cobolt .logo-wrap img { transform: scale(1.28); }
+.entrain .logo-wrap { background: #f8f5ef; }
+.entrain .logo-wrap img { width: 92%; }
+.brand-copy { min-width: 0; }
+.brand-copy h2 { margin: 0; font-size: 16px; line-height: 1.25; letter-spacing: -.02em; }
+.brand-copy p { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.expand-icon { width: 32px; height: 32px; border-radius: 50%; background: #f2f4f7; display: grid; place-items: center; transition: .25s ease; }
+.expand-icon::before, .expand-icon span { content: ""; position: absolute; width: 12px; height: 1.5px; border-radius: 4px; background: #536071; transition: transform .25s ease; }
+.expand-icon span { transform: rotate(90deg); }
+.brand-card[open] .expand-icon { background: #172238; transform: rotate(180deg); }
+.brand-card[open] .expand-icon::before, .brand-card[open] .expand-icon span { background: #fff; }
+.brand-card[open] .expand-icon span { transform: rotate(0); }
+.link-panel { border-top: 1px solid var(--line); padding: 8px 12px 13px; animation: reveal .28s ease both; }
+.link-panel a { color: inherit; text-decoration: none; min-height: 66px; display: grid; grid-template-columns: 42px 1fr 20px; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 14px; transition: background .18s ease, transform .18s ease; }
+.link-panel a:hover { background: #f6f7f9; transform: translateX(2px); }
+.social-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: #f0f2f5; color: #334155; }
+.social-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.social-icon.instagram { color: #d62c75; background: #fff0f6; }
+.social-icon.youtube { color: #e42323; background: #fff0f0; }
+.social-icon.facebook { color: #1769d2; background: #edf5ff; }
+.social-icon.facebook svg { fill: currentColor; stroke: none; }
+.link-copy { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.link-copy strong { font-size: 14px; }
+.link-copy small { overflow: hidden; color: #7a8494; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.arrow { width: 17px; fill: none; stroke: #a3aab5; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+footer { padding-top: 24px; color: #9aa1ad; text-align: center; font-size: 11px; letter-spacing: .04em; }
+.brand-detail-shell { align-items: center; background: #fff; }
+.back-link { width: fit-content; margin: 0 0 18px 3px; display: flex; align-items: center; gap: 6px; color: #667085; font-size: 13px; font-weight: 700; text-decoration: none; }
+.back-link svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.brand-hero { padding: 28px 22px 24px; text-align: center; background: rgba(255,255,255,.94); border: 1px solid rgba(223,227,234,.9); border-radius: 24px 24px 0 0; }
+.hero-logo { width: 150px; height: 100px; margin: 0 auto 17px; display: grid; place-items: center; overflow: hidden; }
+.hero-logo img { width: 100%; height: 100%; object-fit: contain; }
+.brand-hero.cobolt .hero-logo img { transform: scale(1.35); }
+.brand-hero h1 { margin: 0; font-size: 25px; letter-spacing: -.035em; }
+.brand-hero p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+.standalone-links { padding: 9px 12px 14px; background: rgba(255,255,255,.94); border: 1px solid rgba(223,227,234,.9); border-top: 1px solid var(--line); border-radius: 0 0 24px 24px; box-shadow: 0 20px 45px rgba(31,43,70,.1); }
+.standalone-links a { color: inherit; text-decoration: none; min-height: 68px; display: grid; grid-template-columns: 42px 1fr 20px; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 14px; transition: background .18s ease, transform .18s ease; }
+.standalone-links a:hover { background: #f6f7f9; transform: translateX(2px); }
+@keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) {
+  .page-shell { place-items: start center; padding: 56px 16px 24px; }
+  .link-hub { width: 100%; }
+  .brands-box { padding: 28px 14px 16px; border-radius: 20px; }
+  .brand-choice { height: 112px; grid-template-columns: 82px minmax(0, 1fr) 32px; gap: 12px; padding: 14px; border-radius: 16px; }
+  .logo-wrap { width: 82px; height: 76px; }
+  .brand-copy h2 { font-size: 15px; }
+  .brand-copy p { font-size: 11px; }
+  .choice-arrow { width: 30px; height: 30px; }
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@media (max-width: 350px) {
+  .page-shell { padding-inline: 10px; }
+  .brand-choice { grid-template-columns: 72px minmax(0, 1fr) 28px; gap: 8px; padding-inline: 10px; }
+  .logo-wrap { width: 72px; height: 68px; }
+  .choice-arrow { width: 28px; height: 28px; }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
