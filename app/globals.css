@@ -66,7 +66,7 @@ footer { padding-top: 24px; color: #9aa1ad; text-align: center; font-size: 11px;
 .standalone-links a:hover { background: #f6f7f9; transform: translateX(2px); }
 @keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 480px) {
-  .page-shell { place-items: start center; padding: 56px 16px 24px; }
+  .page-shell { place-items: center; padding: 24px 16px; }
   .link-hub { width: 100%; }
   .brands-box { padding: 28px 14px 16px; border-radius: 20px; }
   .brand-choice { height: 112px; grid-template-columns: 82px minmax(0, 1fr) 32px; gap: 12px; padding: 14px; border-radius: 16px; }
