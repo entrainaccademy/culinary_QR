@@ -27,7 +27,7 @@ export default function Home() {
     <main className="page-shell">
       <section className="link-hub brands-box">
         <header className="intro">
-          <h1>Our Brands</h1>
+          <h1>Visit Our Branch</h1>
         </header>
 
         <div className="brand-list">
