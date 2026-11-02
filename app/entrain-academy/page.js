@@ -10,8 +10,10 @@ const brand = {
   height: 635,
   className: "entrain",
   links: [
-    { label: "Website", detail: "entraincullinaryschool.com", href: "https://www.entraincullinaryschool.com/", icon: "web" },
+    { label: "Website", detail: "entrainacademy.co", href: "https://www.entrainacademy.co/", icon: "web" },
     { label: "Instagram", detail: "@entrain_academy", href: "https://www.instagram.com/entrain_academy/?hl=en", icon: "instagram" },
+    { label: "YouTube", detail: "@entrainacademy", href: "https://youtube.com/@entrainacademy?si=CgmPHNFxtSxGJ8CA", icon: "youtube" },
+    { label: "Facebook", detail: "Entrain Academy", href: "https://www.facebook.com/share/1HVNhgdfXR/?mibextid=wwXIfr", icon: "facebook" },
   ],
 };
 
