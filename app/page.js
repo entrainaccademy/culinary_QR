@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const brands = [
- 
   {
     name: "Entrain Academy",
     subtitle: "Learn. Create. Inspire.",
@@ -12,7 +11,16 @@ const brands = [
     href: "/entrain-academy",
     className: "entrain",
   },
-   {
+  {
+    name: "Entrain Growth Partners",
+    subtitle: "Strategic partners for business growth",
+    logo: "/images/growth-logo-trimmed.png",
+    width: 333,
+    height: 86,
+    href: "/entrain-growth-partners",
+    className: "growth",
+  },
+  {
     name: "Cobolt Machineries",
     subtitle: "Professional food machinery solutions",
     logo: "/images/blacklogo.png",
@@ -20,7 +28,7 @@ const brands = [
     height: 1024,
     href: "/cobolt-machineries",
     className: "cobolt",
-  }
+  },
 ];
 
 export default function Home() {
