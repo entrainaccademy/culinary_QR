@@ -83,3 +83,96 @@ footer { padding-top: 24px; color: #9aa1ad; text-align: center; font-size: 11px;
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 .growth .logo-wrap img { width: 100%; }
+
+/* QR landing page */
+.home-page {
+  min-height: 100svh;
+  overflow: hidden;
+  color: #082343;
+  background: radial-gradient(ellipse at 50% 48%, #fff 0%, #fcf9f7 65%, #f6f0eb 100%);
+  position: relative;
+}
+.page-corner {
+  position: absolute;
+  z-index: 0;
+  width: clamp(190px, 43vw, 420px);
+  height: clamp(130px, 27vw, 260px);
+  pointer-events: none;
+}
+.page-corner-top { top: 0; left: 0; }
+.page-corner-bottom { bottom: 0; right: 0; transform: rotate(180deg); }
+.home-inner { width: min(100% - 32px, 1120px); margin: 0 auto; position: relative; z-index: 1; }
+.welcome { padding: 145px 1px 50px; text-align: center; }
+.welcome h1 { margin: 0; font-size: clamp(39px, 9.3vw, 78px); line-height: 1.08; letter-spacing: -.045em; font-weight: 750; }
+.welcome h1 em { color: #c8963d; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -.055em; }
+.brand-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.feature-card {
+  position: relative;
+  display: block;
+  min-width: 0;
+  height: 252px;
+  overflow: hidden;
+  border-radius: 25px;
+  color: #082343;
+  text-decoration: none;
+  isolation: isolate;
+  border: 1px solid rgba(40, 50, 60, .08);
+  box-shadow: 0 17px 28px rgba(39, 32, 27, .10);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 23px 36px rgba(39, 32, 27, .15); }
+.feature-card:focus-visible { outline: 3px solid #bd8b3d; outline-offset: 4px; }
+.academy-card { color: #fff; background: linear-gradient(135deg, #0c315b 0%, #08264a 60%, #061d3b 100%); }
+.academy-card::before { content: ""; position: absolute; z-index: -1; width: 80%; height: 125%; background: rgba(114, 153, 204, .09); border-radius: 50%; right: -18%; bottom: -91%; transform: rotate(-25deg); }
+.cobolt-card { background: linear-gradient(123deg, #f1e9e0 0%, #f8f3ec 61%, #e4d9cd 100%); }
+.growth-card { color: #082343; background: linear-gradient(135deg, #f1f3fb 0%, #e6ebf7 58%, #d7e1f3 100%); }
+.card-content { position: relative; z-index: 2; height: 100%; padding: 27px 27px 25px; display: flex; flex-direction: column; align-items: flex-start; }
+.brand-logo { width: 190px; height: 62px; object-fit: contain; object-position: left center; }
+.academy-card .brand-logo { filter: brightness(0) invert(1); width: 195px; }
+.cobolt-lockup { display: flex; align-items: center; gap: 8px; height: 65px; white-space: nowrap; }
+.cobolt-emblem { position: relative; flex: none; display: block; width: 40px; height: 43px; background: #ed1642; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+.cobolt-emblem::before { content: ""; position: absolute; width: 19px; height: 19px; top: 12px; left: 10px; border-radius: 50%; background: #a9aaa9; border: 4px solid #fff; }
+.cobolt-wordmark { display: flex; flex-direction: column; line-height: 1; color: #08090b; }
+.cobolt-wordmark strong { font: 900 29px/1 Arial, Helvetica, sans-serif; letter-spacing: -.065em; }
+.cobolt-wordmark b { color: #ed1642; }
+.cobolt-wordmark small { margin-top: 3px; text-align: center; font: 800 7px/1 Arial, Helvetica, sans-serif; letter-spacing: .48em; }
+.growth-card .brand-logo { width: 202px; height: 58px; }
+.card-content p { max-width: 155px; margin: 22px 0 0; font-size: 18px; line-height: 1.27; font-weight: 400; letter-spacing: -.02em; }
+.card-arrow { width: 42px; height: 42px; margin-top: auto; border-radius: 50%; display: grid; place-items: center; background: #f9f3ec; color: #082343; }
+.cobolt-card .card-arrow { background: #082d48; color: #fff; }
+.growth-card .card-arrow { background: #082d48; color: #fff; }
+.card-arrow svg { width: 23px; height: 23px; }
+.card-art { position: absolute; z-index: 1; pointer-events: none; }
+.chef-art { width: 180px; height: 215px; right: -20px; bottom: -24px; transform: rotate(-8deg); filter: drop-shadow(-12px 10px 13px rgba(0,0,0,.13)); }
+.stove-art { width: 205px; height: 220px; right: -42px; bottom: -23px; filter: drop-shadow(-10px 8px 8px rgba(0,0,0,.17)); }
+.home-bottom-space { height: 150px; }
+@media (min-width: 700px) {
+  .home-inner { width: min(100% - 80px, 1120px); }
+  .welcome { padding: 225px 2px 72px; }
+  .brand-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .brand-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 11px); justify-self: center; }
+  .feature-card { height: clamp(285px, 31vw, 355px); border-radius: 32px; }
+  .card-content { padding: 40px; }
+  .brand-logo { width: 250px; height: 78px; }
+  .academy-card .brand-logo { width: 260px; }
+  .cobolt-lockup { height: 78px; gap: 10px; }
+  .cobolt-emblem { width: 52px; height: 55px; }
+  .cobolt-emblem::before { width: 25px; height: 25px; top: 15px; left: 13px; border-width: 5px; }
+  .cobolt-wordmark strong { font-size: 39px; }
+  .cobolt-wordmark small { font-size: 9px; }
+  .growth-card .brand-logo { width: 265px; height: 77px; }
+  .card-content p { max-width: 235px; margin-top: 30px; font-size: 23px; }
+  .card-arrow { width: 51px; height: 51px; }
+  .chef-art { width: 260px; height: 290px; right: -26px; bottom: -30px; }
+  .stove-art { width: 290px; height: 300px; right: -52px; bottom: -31px; }
+  .home-bottom-space { height: 180px; }
+}
+@media (max-width: 360px) {
+  .home-inner { width: min(100% - 24px, 1120px); }
+  .feature-card { height: 232px; }
+  .card-content { padding: 22px; }
+  .brand-logo, .academy-card .brand-logo { width: 175px; }
+  .growth-card .brand-logo { width: 180px; }
+  .cobolt-lockup { transform: scale(.88); transform-origin: left center; }
+  .card-content p { font-size: 16px; margin-top: 15px; }
+}

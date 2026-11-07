@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Cobolt Group | Official Links",
-  description: "Connect with Cobolt Machineries and Entrain Academy.",
+  title: "Explore Our Brands",
+  description: "Explore Entrain Academy, Cobolt Machineries, and Entrain Growth Partners.",
 };
 
 export default function RootLayout({ children }) {
