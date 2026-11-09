@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Explore Our Brands",
-  description: "Explore Entrain Academy, Cobolt Machineries, and Entrain Growth Partners.",
+  description: "Explore Entrain Academy, Cobolt Machineries, Entrain Growth Partners, and CHEFFCO Culinary Solutions.",
 };
 
 export default function RootLayout({ children }) {

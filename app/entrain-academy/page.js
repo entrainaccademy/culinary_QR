@@ -9,6 +9,7 @@ const brand = {
   width: 2077,
   height: 635,
   className: "entrain",
+  logoOnly: true,
   links: [
     { label: "Website", detail: "entrainacademy.co", href: "https://www.entrainacademy.co/", icon: "web" },
     { label: "Instagram", detail: "@entrain_academy", href: "https://www.instagram.com/entrain_academy/?hl=en", icon: "instagram" },

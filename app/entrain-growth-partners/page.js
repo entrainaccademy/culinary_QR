@@ -9,6 +9,7 @@ const brand = {
   width: 333,
   height: 86,
   className: "growth",
+  logoOnly: true,
   links: [
     { label: "Website", detail: "entraingrowthpartners.com", href: "https://www.entraingrowthpartners.com/", icon: "web" },
     { label: "Instagram", detail: "@entrain.growth.partners", href: "https://www.instagram.com/entrain.growth.partners/", icon: "instagram" },

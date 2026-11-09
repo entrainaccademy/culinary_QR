@@ -9,6 +9,7 @@ const brand = {
   width: 1536,
   height: 1024,
   className: "cobolt",
+  logoOnly: true,
   links: [
     { label: "Website", detail: "coboltmachineries.com", href: "https://coboltmachineries.com", icon: "web" },
     { label: "Instagram", detail: "@coboltmachineries", href: "https://www.instagram.com/coboltmachineries?igsh=bjEzenplY2VveTA5", icon: "instagram" },

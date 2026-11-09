@@ -47,6 +47,8 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .social-icon.youtube { color: #e42323; background: #fff0f0; }
 .social-icon.facebook { color: #1769d2; background: #edf5ff; }
 .social-icon.facebook svg { fill: currentColor; stroke: none; }
+.social-icon.phone { color: #0a5570; background: #e9f2f5; }
+.social-icon.whatsapp { color: #128c50; background: #e7f7ec; }
 .link-copy { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .link-copy strong { font-size: 14px; }
 .link-copy small { overflow: hidden; color: #7a8494; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
@@ -64,6 +66,49 @@ footer { padding-top: 24px; color: #9aa1ad; text-align: center; font-size: 11px;
 .standalone-links { padding: 9px 12px 14px; background: rgba(255,255,255,.94); border: 1px solid rgba(223,227,234,.9); border-top: 1px solid var(--line); border-radius: 0 0 24px 24px; box-shadow: 0 20px 45px rgba(31,43,70,.1); }
 .standalone-links a { color: inherit; text-decoration: none; min-height: 68px; display: grid; grid-template-columns: 42px 1fr 20px; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 14px; transition: background .18s ease, transform .18s ease; }
 .standalone-links a:hover { background: #f6f7f9; transform: translateX(2px); }
+.entrain-detail { color: #0a2b49; background: radial-gradient(circle at 50% 25%, #fff 0%, #fbf7f0 60%, #f3e9d9 100%); }
+.entrain-detail .link-hub { width: min(100%, 460px); }
+.entrain-detail .back-link { width: fit-content; min-height: 38px; margin: 0 0 14px; padding: 0 14px 0 10px; gap: 7px; color: #143757; background: #fff; border: 1px solid #e9dfd0; border-radius: 999px; box-shadow: 0 3px 12px rgba(20, 43, 73, .05); }
+.entrain-detail .back-link:hover { background: #fff7e9; }
+.entrain-detail .back-link:focus-visible, .entrain-detail .standalone-links a:focus-visible { outline: 3px solid #c8963d; outline-offset: 3px; }
+.entrain-detail .brand-hero { position: relative; overflow: hidden; padding: 35px 24px; background: linear-gradient(145deg, #fffdf9, #fbf3e6); border: 1px solid #e9ddca; border-radius: 26px; box-shadow: 0 14px 35px rgba(38, 44, 58, .08); }
+.entrain-detail .hero-logo { position: relative; width: min(100%, 235px); height: 90px; margin-bottom: 0; }
+.entrain-detail .brand-hero h1 { position: relative; font-size: clamp(24px, 6vw, 29px); font-weight: 700; letter-spacing: -.04em; }
+.entrain-detail .brand-hero p { position: relative; margin-top: 8px; color: #956b2e; font-size: 14px; font-weight: 600; letter-spacing: .04em; }
+.entrain-detail .standalone-links { display: grid; gap: 9px; margin-top: 16px; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.entrain-detail .standalone-links a { min-height: 70px; padding: 11px 15px; gap: 13px; background: #fff; border: 1px solid #e7eaf0; border-radius: 17px; box-shadow: 0 5px 16px rgba(30, 48, 71, .045); }
+.entrain-detail .standalone-links a:hover { background: #fffaf2; border-color: #dcc9a8; transform: translateY(-2px); }
+.entrain-detail .social-icon { width: 42px; height: 42px; border-radius: 12px; }
+.entrain-detail .social-icon.web { color: #143757; background: #edf2f6; }
+.entrain-detail .link-copy strong { color: #0a2b49; font-size: 14px; }
+.entrain-detail .link-copy small { color: #687789; font-size: 11px; }
+.entrain-detail .arrow { stroke: #a3804b; }
+.cheffco-detail { background: radial-gradient(circle at 50% 35%, #fff 0%, #eef2f5 70%, #dde5e9 100%); }
+.cheffco-detail .brand-hero { padding: 32px 24px; background: linear-gradient(135deg, #f8fafb, #dce3e8); border: 1px solid #d2dbe1; border-radius: 26px 26px 0 0; }
+.cheffco-detail .hero-logo { width: min(100%, 310px); height: 120px; margin-bottom: 0; }
+.cheffco-detail .hero-logo img { filter: brightness(.48); }
+.cheffco-detail .standalone-links { border-radius: 0 0 26px 26px; }
+.cheffco-detail .standalone-links a:focus-visible { outline: 3px solid #0a5570; outline-offset: 2px; }
+.cobolt-detail { --detail-background: radial-gradient(circle at 50% 25%, #fff 0%, #fbf7f2 65%, #eee5dc 100%); --detail-hero: linear-gradient(145deg, #fffdfa, #f3eae0); --detail-border: #e8dcd0; --detail-hover: #fff7f1; --detail-accent: #ed1642; }
+.growth-detail { --detail-background: radial-gradient(circle at 50% 25%, #fff 0%, #f4f6fc 65%, #e3e9f6 100%); --detail-hero: linear-gradient(145deg, #fbfcff, #e5eafa); --detail-border: #dce3f2; --detail-hover: #f4f6fe; --detail-accent: #4e62aa; }
+.cheffco-detail { --detail-background: radial-gradient(circle at 50% 25%, #fff 0%, #f2f5f7 65%, #e1e7eb 100%); --detail-hero: linear-gradient(145deg, #f8fafb, #dce3e8); --detail-border: #d2dbe1; --detail-hover: #f3f7f9; --detail-accent: #62727f; }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) { color: #0a2b49; background: var(--detail-background); }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .link-hub { width: min(100%, 460px); }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .back-link { min-height: 38px; margin: 0 0 14px; padding: 0 14px 0 10px; gap: 7px; color: #143757; background: #fff; border: 1px solid var(--detail-border); border-radius: 999px; box-shadow: 0 3px 12px rgba(20, 43, 73, .05); }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .back-link:hover { background: var(--detail-hover); }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .back-link:focus-visible, .brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .standalone-links a:focus-visible { outline: 3px solid var(--detail-accent); outline-offset: 3px; }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .brand-hero { position: relative; overflow: hidden; padding: 35px 24px; background: var(--detail-hero); border: 1px solid var(--detail-border); border-radius: 26px; box-shadow: 0 14px 35px rgba(38, 44, 58, .08); }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .hero-logo { position: relative; width: min(100%, 280px); height: 92px; margin-bottom: 0; }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .standalone-links { display: grid; gap: 9px; margin-top: 16px; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .standalone-links a { min-height: 70px; padding: 11px 15px; gap: 13px; background: #fff; border: 1px solid #e7eaf0; border-radius: 17px; box-shadow: 0 5px 16px rgba(30, 48, 71, .045); }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .standalone-links a:hover { background: var(--detail-hover); border-color: var(--detail-border); transform: translateY(-2px); }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .social-icon { width: 42px; height: 42px; border-radius: 12px; }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .social-icon.web { color: #143757; background: #edf2f6; }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .link-copy strong { color: #0a2b49; font-size: 14px; }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .link-copy small { color: #687789; font-size: 11px; }
+.brand-detail-shell:is(.cobolt-detail, .growth-detail, .cheffco-detail) .arrow { stroke: var(--detail-accent); }
+.cobolt-detail .hero-logo .cobolt-lockup { transform: scale(1.1); }
+.brand-detail-shell.cheffco-detail .hero-logo { width: min(100%, 310px); height: 120px; }
 @keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 480px) {
   .page-shell { place-items: center; padding: 24px 16px; }
@@ -122,13 +167,15 @@ footer { padding-top: 24px; color: #9aa1ad; text-align: center; font-size: 11px;
 }
 .feature-card:hover { transform: translateY(-4px); box-shadow: 0 23px 36px rgba(39, 32, 27, .15); }
 .feature-card:focus-visible { outline: 3px solid #bd8b3d; outline-offset: 4px; }
-.academy-card { color: #fff; background: linear-gradient(135deg, #0c315b 0%, #08264a 60%, #061d3b 100%); }
+.academy-card { color: #082343; background: linear-gradient(135deg, #fffaf2 0%, #f7eddc 65%, #ead7b8 100%); }
 .academy-card::before { content: ""; position: absolute; z-index: -1; width: 80%; height: 125%; background: rgba(114, 153, 204, .09); border-radius: 50%; right: -18%; bottom: -91%; transform: rotate(-25deg); }
 .cobolt-card { background: linear-gradient(123deg, #f1e9e0 0%, #f8f3ec 61%, #e4d9cd 100%); }
 .growth-card { color: #082343; background: linear-gradient(135deg, #f1f3fb 0%, #e6ebf7 58%, #d7e1f3 100%); }
+.cheffco-card { color: #082343; background: linear-gradient(135deg, #f8fafb 0%, #edf1f4 62%, #dce3e8 100%); }
 .card-content { position: relative; z-index: 2; height: 100%; padding: 27px 27px 25px; display: flex; flex-direction: column; align-items: flex-start; }
 .brand-logo { width: 190px; height: 62px; object-fit: contain; object-position: left center; }
-.academy-card .brand-logo { filter: brightness(0) invert(1); width: 195px; }
+.academy-card .brand-logo { width: 195px; }
+.academy-card .card-arrow { background: #082d48; color: #fff; }
 .cobolt-lockup { display: flex; align-items: center; gap: 8px; height: 65px; white-space: nowrap; }
 .cobolt-emblem { position: relative; flex: none; display: block; width: 40px; height: 43px; background: #ed1642; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
 .cobolt-emblem::before { content: ""; position: absolute; width: 19px; height: 19px; top: 12px; left: 10px; border-radius: 50%; background: #a9aaa9; border: 4px solid #fff; }
@@ -137,15 +184,40 @@ footer { padding-top: 24px; color: #9aa1ad; text-align: center; font-size: 11px;
 .cobolt-wordmark b { color: #ed1642; }
 .cobolt-wordmark small { margin-top: 3px; text-align: center; font: 800 7px/1 Arial, Helvetica, sans-serif; letter-spacing: .48em; }
 .growth-card .brand-logo { width: 202px; height: 58px; }
+.cheffco-card .brand-logo { width: 235px; height: 90px; filter: brightness(.48); }
 .card-content p { max-width: 155px; margin: 22px 0 0; font-size: 18px; line-height: 1.27; font-weight: 400; letter-spacing: -.02em; }
 .card-arrow { width: 42px; height: 42px; margin-top: auto; border-radius: 50%; display: grid; place-items: center; background: #f9f3ec; color: #082343; }
 .cobolt-card .card-arrow { background: #082d48; color: #fff; }
 .growth-card .card-arrow { background: #082d48; color: #fff; }
+.cheffco-card .card-arrow { background: #082d48; color: #fff; }
 .card-arrow svg { width: 23px; height: 23px; }
 .card-art { position: absolute; z-index: 1; pointer-events: none; }
 .chef-art { width: 180px; height: 215px; right: -20px; bottom: -24px; transform: rotate(-8deg); filter: drop-shadow(-12px 10px 13px rgba(0,0,0,.13)); }
 .stove-art { width: 205px; height: 220px; right: -42px; bottom: -23px; filter: drop-shadow(-10px 8px 8px rgba(0,0,0,.17)); }
+.growth-art { width: 185px; height: 185px; right: -40px; bottom: -24px; transform: rotate(-9deg); filter: drop-shadow(-12px 10px 12px rgba(40,55,105,.2)); }
+.powder-art { width: 205px; height: 220px; right: -30px; bottom: -27px; transform: rotate(6deg); filter: drop-shadow(-9px 9px 9px rgba(50,58,65,.17)); }
 .home-bottom-space { height: 150px; }
+@media (max-width: 699px) {
+  .home-page { overflow: visible; }
+  .home-inner { min-height: 100svh; display: flex; flex-direction: column; padding-block: clamp(16px, 3svh, 28px); }
+  .welcome { padding: clamp(20px, 5svh, 48px) 1px clamp(16px, 3svh, 28px); }
+  .welcome h1 { font-size: clamp(30px, 8vw, 39px); }
+  .brand-grid { flex: 1; grid-template-rows: repeat(4, minmax(118px, 1fr)); gap: clamp(8px, 1.5svh, 14px); }
+  .feature-card { height: auto; min-height: 118px; border-radius: 22px; }
+  .card-content { padding: clamp(13px, 2svh, 22px) 22px; }
+  .brand-logo, .academy-card .brand-logo { width: 190px; height: clamp(38px, 6svh, 58px); }
+  .growth-card .brand-logo { width: 202px; height: clamp(38px, 6svh, 58px); }
+  .cheffco-card .brand-logo { width: 205px; height: clamp(60px, 8svh, 80px); }
+  .cobolt-lockup { height: clamp(38px, 6svh, 58px); }
+  .card-content p { max-width: none; margin-top: clamp(7px, 1.3svh, 14px); font-size: clamp(12px, 3.5vw, 14px); white-space: nowrap; }
+  .card-arrow { width: 34px; height: 34px; }
+  .card-arrow svg { width: 19px; height: 19px; }
+  .chef-art { width: 150px; height: 180px; }
+  .stove-art { width: 175px; height: 190px; }
+  .growth-art { width: 170px; height: 170px; right: -50px; bottom: -25px; }
+  .powder-art { width: 150px; height: 160px; right: -32px; bottom: -38px; }
+  .home-bottom-space { height: 24px; flex: none; }
+}
 @media (min-width: 700px) {
   .home-inner { width: min(100% - 80px, 1120px); }
   .welcome { padding: 225px 2px 72px; }
@@ -161,18 +233,25 @@ footer { padding-top: 24px; color: #9aa1ad; text-align: center; font-size: 11px;
   .cobolt-wordmark strong { font-size: 39px; }
   .cobolt-wordmark small { font-size: 9px; }
   .growth-card .brand-logo { width: 265px; height: 77px; }
+  .cheffco-card .brand-logo { width: 290px; height: 110px; }
   .card-content p { max-width: 235px; margin-top: 30px; font-size: 23px; }
   .card-arrow { width: 51px; height: 51px; }
   .chef-art { width: 260px; height: 290px; right: -26px; bottom: -30px; }
   .stove-art { width: 290px; height: 300px; right: -52px; bottom: -31px; }
+  .growth-art { width: 260px; height: 260px; right: -35px; bottom: -30px; }
+  .powder-art { width: 265px; height: 280px; right: -38px; bottom: -34px; }
   .home-bottom-space { height: 180px; }
 }
 @media (max-width: 360px) {
   .home-inner { width: min(100% - 24px, 1120px); }
-  .feature-card { height: 232px; }
-  .card-content { padding: 22px; }
+  .feature-card { height: auto; }
+  .card-content { padding: 13px 18px; }
   .brand-logo, .academy-card .brand-logo { width: 175px; }
   .growth-card .brand-logo { width: 180px; }
+  .cheffco-card .brand-logo { width: 185px; }
   .cobolt-lockup { transform: scale(.88); transform-origin: left center; }
-  .card-content p { font-size: 16px; margin-top: 15px; }
+  .card-content p { margin-top: 10px; }
+  .stove-art { right: -85px; }
+  .growth-art { right: -70px; }
+  .powder-art { right: -52px; }
 }
